@@ -27,7 +27,7 @@ def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-  with open('C:/lambda/CS-1/sprint/sprint/src/cityreader/cities.csv', newline='') as csvfile:
+  with open('cities.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for row in reader:
       if(row[0] != 'city'):
@@ -69,7 +69,10 @@ for c in cities:
 # Phoenix: (33.5722,-112.0891)
 # Tucson: (32.1558,-110.8777)
 # Salt Lake City: (40.7774,-111.9301)
-
+lat_1 = input("Enter Latitude 1: ")
+lat_2 = input("Enter Latitude 2: ")
+lon_1 = input("Enter Longitude 1: ")
+lon_2 = input("Enter Longitude 2: ")
 # TODO Get latitude and longitude values from the user
 import math
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
@@ -88,3 +91,4 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 
   return within
 
+print(cityreader_stretch(float(lat_1), float(lat_2), float(lon_1), float(lon_2), cities))
